@@ -10,6 +10,8 @@ namespace BankingAppV01
                //Console.WriteLine(b1.Deposit(90.00m));
                Customer c1 = new Customer("Kato Gorgadze", "kato@zencode.one");
                c1.OpenNewAccount(10000.00m);
+               c1.OpenNewAccount(900.99m);
+               c1.OpenNewAccount(789.99m);
                Console.WriteLine(c1.ListAccounts());
 
           }
