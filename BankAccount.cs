@@ -32,6 +32,14 @@ namespace BankingAppV01 {
                return OperationResult.Successful("Withdrawal Successful");
           }
 
+          public decimal getBalance()
+          {
+               return Balance;
+          }
 
+          public Guid getAccountNumber()
+          {
+               return AccountNumber;
+          }
      }
 }

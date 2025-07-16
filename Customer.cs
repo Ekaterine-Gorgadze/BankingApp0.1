@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 namespace BankingAppV01
 {
      public class Customer
@@ -13,22 +14,31 @@ namespace BankingAppV01
           {
                FullName = name;
                EmailAddress = email;
-               AccountId = new Guid.NewGuid();
+               AccountId = Guid.NewGuid();
 
           }
 
-          public void OpenNewAccount(decimal initalDeposit)
+          public void OpenNewAccount(decimal initialDeposit)
           {
                // first i'll check if the deposit is positive
 
-               if (initialDeposit <= 0) throw new ArgumentException("Deposit has to be positive");
+               if (initialDeposit <= 0.00m) throw new ArgumentException("Deposit has to be positive");
                // now that we've made sure the deposit is positive we can open a new account
                // meaning that we can add a new account to the list of accounts of the customer class
 
                BankAccount newAccount = new BankAccount(initialDeposit);
-               Accounts.add(newAccount);
+               Accounts.Add(newAccount);
           }
 
-          
+          public string Summary(BankAccount b)
+          {
+               return $"Account Number: {b.getAccountNumber()}\n" + $"Balance: {b.getBalance()}";
+          }
+
+          public String ListAccounts()
+          {
+               if (Accounts.Count == 0) return "No accounts were found.";
+               return string.Join("\n\n", Accounts.Select(Summary));
+          }
      }
 }
