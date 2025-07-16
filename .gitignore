@@ -1,0 +1,8 @@
+# .gitignore content
+obj/
+bin/
+*.user
+*.suo
+*.cache
+*.log
+*.vs/
