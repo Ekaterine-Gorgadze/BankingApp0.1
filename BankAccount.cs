@@ -20,18 +20,18 @@ namespace BankingAppV01 {
                Balance += amount;
           }
 
-          public (bool OperationResult, string Message) Withdraw(decimal amount)
+          public OperationResult Withdraw(decimal amount)
           {
                if (amount <= 0)
-                    throw new ArgumentException("The amount must be positive.");
+                    return OperationResult.Fail("The amount must be positive.");
 
                if (amount > Balance)
-                    throw new ArgumentException("Withdrawal amount can not be more than the Balance.");
+                    return OperationResult.Fail("Withdrawal amount can not be more than the Balance.");
 
                Balance -= amount;
-               return (true, "Withdrawal successful");
+               return OperationResult.Successful("Withdrawal Successful");
           }
 
-          
+
      }
 }
