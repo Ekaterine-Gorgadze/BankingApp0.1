@@ -19,16 +19,18 @@ namespace BankingAppV01
                List<Customer> customers = new List<Customer>();
                customers.Add(c1);
                string answer = "";
+               ITransactionLogger logger = new ConsoleTransactionLogger();
                do
                {
                     Console.WriteLine("Welcome to BankingApp0.1");
                     Console.WriteLine("------------------------");
                     Console.Write("Would you like to open a bank account? (yes/no) ");
                     answer = Console.ReadLine().Trim();
-                    if (string.Equals("no", answer, StringComparison.OrdinalIgnoreCase)){
-                    Console.WriteLine("Goodbye! Press any key to exit.");
-                    Console.ReadKey();
-                    return;
+                    if (string.Equals("no", answer, StringComparison.OrdinalIgnoreCase))
+                    {
+                         Console.WriteLine("Goodbye! Press any key to exit.");
+                         Console.ReadKey();
+                         return;
                     }
                     Console.Write("Enter your name: ");
                     string name = Console.ReadLine().Trim();
@@ -51,8 +53,8 @@ namespace BankingAppV01
                          deposit = decimal.Parse(Console.ReadLine().Trim());
                          if (deposit <= 0) Console.WriteLine("Deposit has to be a positive number. Try again.");
                     } while (deposit <= 0);
-                    newC.OpenNewAccount(deposit);
-                    BankAccount newB = new BankAccount(deposit);
+                    newC.OpenNewAccount(deposit,logger);
+                    BankAccount newB = new BankAccount(deposit,logger);
                     Console.WriteLine("Account created!");
                     string answer2 = "";
                     decimal newDeposit = 0.00m;

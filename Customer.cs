@@ -18,7 +18,7 @@ namespace BankingAppV01
 
           }
 
-          public void OpenNewAccount(decimal initialDeposit)
+          public void OpenNewAccount(decimal initialDeposit, ITransactionLogger logger)
           {
                // first i'll check if the deposit is positive
 
@@ -26,7 +26,7 @@ namespace BankingAppV01
                // now that we've made sure the deposit is positive we can open a new account
                // meaning that we can add a new account to the list of accounts of the customer class
 
-               BankAccount newAccount = new BankAccount(initialDeposit);
+               BankAccount newAccount = new BankAccount(initialDeposit, logger);
                Accounts.Add(newAccount);
           }
 
