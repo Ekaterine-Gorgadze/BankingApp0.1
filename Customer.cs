@@ -40,5 +40,9 @@ namespace BankingAppV01
                if (Accounts.Count == 0) return "No accounts were found.";
                return string.Join("\n\n", Accounts.Select(Summary));
           }
+
+          public BankAccount PrimaryAccount(){
+               return Accounts.FirstOrDefault();
+          }
      }
 }
