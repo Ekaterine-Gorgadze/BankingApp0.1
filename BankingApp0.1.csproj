@@ -6,6 +6,15 @@
     <RootNamespace>BankingApp0._1</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
+  <ItemGroup>
+    
+    <Compile Remove="BankingApp.Tests\**\*.cs" />
+  </ItemGroup>
+
 </Project>
+
+
+

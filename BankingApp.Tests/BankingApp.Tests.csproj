@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BankingApp0.1\BankingApp0.1.csproj" />
+    <ProjectReference Include="..\BankingApp0.1.csproj" />
   </ItemGroup>
 
 </Project>
