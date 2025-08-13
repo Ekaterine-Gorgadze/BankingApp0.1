@@ -91,6 +91,6 @@ namespace BankingApp.Tests
                .Callback((Customer c, IEnumerable<string> e, out string msg) => {
                msg = "";
                });
-          }
+          } 
      }
 }
