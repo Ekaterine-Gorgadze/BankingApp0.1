@@ -1,9 +1,12 @@
 using NUnit.Framework;
 using Moq;
-using BankingAppV01;
+
 using System.Collections.Generic;
 using NUnit.Framework.Internal;
 // Enhanced tests using Moq. 
+using Banking.Domain;
+using Banking.Application;
+using Banking.Infrastructure;
 namespace BankingApp.Tests
 {
      [TestFixture]
@@ -66,6 +69,6 @@ namespace BankingApp.Tests
                mockLogger.Verify(m => m.Log(It.IsAny<string>()), Times.Exactly(2));
           }
 
-          
+
      }
 }

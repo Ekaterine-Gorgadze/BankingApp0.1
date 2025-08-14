@@ -1,4 +1,4 @@
-namespace BankingAppV01 {
+namespace Banking.Domain {
      public class BankAccount
      {
           private decimal Balance { get; set; }

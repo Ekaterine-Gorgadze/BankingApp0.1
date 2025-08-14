@@ -1,4 +1,6 @@
-namespace BankingAppV01
+using Banking.Domain;
+using Banking.Application;
+namespace Banking.Infrastructure
 {
      public class ConsoleTransactionLogger : ITransactionLogger
      {

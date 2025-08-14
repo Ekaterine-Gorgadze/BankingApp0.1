@@ -1,4 +1,6 @@
-namespace BankingAppV01
+using Banking.Domain;
+
+namespace Banking.Application
 {
      public interface ICustomerOnboardingService
      {
