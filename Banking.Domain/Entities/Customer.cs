@@ -34,10 +34,10 @@ namespace Banking.Domain.Entites
 
           }
 
-          public void OpenAccount(decimal initialDeposit)
+          public void OpenAccount(Money initialDeposit)
           {
-               if (initialDeposit < 0) throw new ArgumentException("Initial Deposit Must be Positive.");
-               BankAccount newBankAccount = new BankAccount(initialDeposit);
+               if (initialDeposit.Amount < 0) throw new ArgumentException("Initial Deposit Must be Positive.");
+               BankAccount newBankAccount = new BankAccount(initialDeposit, Id);
                bankAccounts.Add(newBankAccount);
           }
 

@@ -14,9 +14,24 @@ namespace Banking.Domain.ValueObjects
 
                Currency = currency;
 
-               if (amount < 0) throw new ArgumentException("Amount must be positive, Try again");
+               if (amount < 0) throw new ArgumentException("Amount Must Be Positive, Try again");
 
                Amount = amount;
+          }
+
+          public Money Add(Money amount)
+          {
+               if (amount.Amount < 0) throw new ArgumentException("Deposit Must Be Positive, Try Again.");
+               if (!amount.Currency.Equals(Currency)) throw new InvalidOperationException("Currencies Must Match.");
+               return new Money(Currency, Amount + amount.Amount);
+          }
+          
+          public Money Subtract(Money amount)
+          {
+               if (amount.Amount < 0) throw new ArgumentException("Deposit Must Be Positive, Try Again.");
+               if (!amount.Currency.Equals(Currency)) throw new InvalidOperationException("Currencies Must Match.");
+               if (amount.Amount > Amount) throw new ArgumentException("Not Enough Balance, Try Again");
+               return new Money(Currency, Amount - amount.Amount);
           }
      }
 }
