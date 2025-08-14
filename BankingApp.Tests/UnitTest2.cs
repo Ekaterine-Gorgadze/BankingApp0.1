@@ -1,8 +1,11 @@
 using NUnit.Framework;
 using Moq;
-using BankingAppV01;
+
 using System.Collections.Generic;
 using NUnit.Framework.Internal;
+using Banking.Domain;
+using Banking.Application;
+using Banking.Infrastructure;
 namespace BankingApp.Tests
 {
      [TestFixture]

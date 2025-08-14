@@ -1,7 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Diagnostics;
-
-namespace BankingAppV01
+using Banking.Domain;
+using Banking.Infrastructure;
+using Banking.Application;
+namespace Banking.ConsoleUI
 {
      class Program
      {

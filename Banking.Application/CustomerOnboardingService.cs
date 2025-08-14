@@ -1,4 +1,6 @@
-namespace BankingAppV01
+using Banking.Domain;
+
+namespace Banking.Application
 {
      public class CustomerOnboardingService : ICustomerOnboardingService
      {
@@ -15,7 +17,8 @@ namespace BankingAppV01
 
           public bool createAccount(Customer customer, out string message)
           {
-               if(!validator.validateCustomer(customer, registeredEmails, out message)){
+               if (!validator.validateCustomer(customer, registeredEmails, out message))
+               {
                     logger.Log($"Validation failed: {message}");
                     return false;
                }
